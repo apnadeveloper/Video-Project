@@ -1,0 +1,229 @@
+:root {
+    --dark-pink: #c2185b;
+    --light-pink: #f8bbd0;
+    --dark-pink-hover: #ad1457;
+    --light-pink-hover: #f48fb1;
+  }
+  .bg-dark-pink {
+    background-color: var(--dark-pink) !important;
+  }
+  
+  .bg-light-pink {
+    background-color: var(--light-pink) !important;
+  }
+  
+  .text-dark-pink {
+    color: var(--dark-pink) !important;
+  }
+  
+  .text-light-pink {
+    color: var(--light-pink) !important;
+  }
+  
+  .btn-light-pink {
+    background-color: var(--light-pink);
+    color: #000;
+  }
+  
+  .btn-light-pink:hover {
+    background-color: var(--light-pink-hover);
+  }
+  
+  .btn-dark-pink {
+    background-color: var(--dark-pink);
+    color: #fff;
+  }
+  
+  .btn-dark-pink:hover {
+    background-color: var(--dark-pink-hover);
+    color: #fff;
+  }
+  
+  .video-card {
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+  }
+  
+  .video-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .video-thumbnail {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    background-color: #000;
+    overflow: hidden;
+  }
+  
+  .video-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    opacity: 0.8;
+  }
+  
+  .category-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(194, 24, 91, 0.8);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  .hero-section {
+    background: url('https://images.unsplash.com/photo-1693150232221-23e7b52ba2a6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center / cover;
+    color: var(--light-pink);
+    padding: 100px 0;
+    text-align: center;
+  }
+  
+  .page-header {
+    background-color: var(--dark-pink);
+    color: white;
+    padding: 30px 0;
+    margin-bottom: 30px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 60px 0;
+    }
+    
+    .video-card {
+      margin-bottom: 15px;
+    }
+  }
+
+  /* Age Verification Popup */
+.age-verification-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.age-verification-popup {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.age-verification-popup h3 {
+  color: var(--dark-pink);
+}
+
+/* Hide the main content when popup is active */
+body.age-verification-active {
+  overflow: hidden;
+}
+
+body.age-verification-active > :not(.age-verification-overlay) {
+  filter: blur(5px);
+  pointer-events: none;
+}
+.nav-link{
+  color:white !important;
+}
+.nav-link:hover{
+  color:rgb(226, 225, 225) !important;
+  background-color: #000;
+  transform: rotateZ(15deg);
+  border-radius:5px;
+}
+/* Video Preview Styles */
+.video-thumbnail {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  background-color: #000;
+  overflow: hidden;
+}
+
+.video-thumbnail video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.video-thumbnail:hover video {
+  display: block;
+}
+
+.video-thumbnail:hover img {
+  display: none;
+}
+
+/* Video Modal Styles */
+.video-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 99999;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-modal-content {
+  width: 80%;
+  max-width: 900px;
+  position: relative;
+}
+
+.video-modal-content video {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.close-modal {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  color: var(--light-pink);
+}
+a{
+  text-decoration: none !important;
+}
