@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DMCA Policy | Video Hub Movies</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Age Verification Popup -->
+  <div class="age-verification-overlay" id="ageVerification">
+    <div class="age-verification-popup">
+      <div class="text-center">
+        <i class="fas fa-exclamation-triangle fa-4x mb-3 text-dark-pink"></i>
+        <h3 class="mb-3">Age Verification</h3>
+        <p class="mb-4">This website contains content for adults only. You must be 18 years or older to enter.</p>
+        
+        <div class="d-flex justify-content-center gap-3">
+          <button class="btn btn-dark-pink px-4" id="confirmAge">Yes, I'm 18+</button>
+          <button class="btn btn-outline-dark-pink px-4" id="denyAge">No, I'm Under 18</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header></header>
+  
+  <div class="page-header">
+    <div class="container">
+      <h1>DMCA Policy</h1>
+      <p class="lead">Digital Millennium Copyright Act Compliance</p>
+    </div>
+  </div>
+  
+  <section class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <h2 class="text-dark-pink mb-4">DMCA Copyright Policy</h2>
+              <p>Video Hub Movies ("we", "us", or "our") respects the intellectual property rights of others and complies with the Digital Millennium Copyright Act ("DMCA"). This policy outlines how we handle copyright infringement claims for our adult content website.</p>
+              
+              <h4 class="mt-4">1. Reporting Copyright Infringement</h4>
+              <p>If you believe your copyrighted work has been copied in a way that constitutes infringement, please provide our Copyright Agent with the following information:</p>
+              <ol>
+                <li>A physical or electronic signature of the copyright owner or authorized agent</li>
+                <li>Identification of the copyrighted work claimed to have been infringed</li>
+                <li>Identification of the material that is claimed to be infringing (including URL)</li>
+                <li>Your contact information (address, telephone number, and email)</li>
+                <li>A statement that you have a good faith belief the use is not authorized</li>
+                <li>A statement that the information is accurate under penalty of perjury</li>
+              </ol>
+              
+              <h4 class="mt-4">2. Counter-Notification</h4>
+              <p>If you believe your content was wrongly removed, you may submit a counter-notification containing:</p>
+              <ol>
+                <li>Your physical or electronic signature</li>
+                <li>Identification of the removed material and its location before removal</li>
+                <li>A statement under penalty of perjury that you believe the material was removed by mistake</li>
+                <li>Your name, address, and consent to local federal court jurisdiction</li>
+              </ol>
+              
+              <h4 class="mt-4">3. Repeat Infringers</h4>
+              <p>We maintain a policy of terminating accounts of repeat infringers in appropriate circumstances.</p>
+              
+              <h4 class="mt-4">4. Designated Copyright Agent</h4>
+              <p>All DMCA notices should be sent to our designated agent:</p>
+              <address class="bg-light p-3 rounded">
+                <strong>DMCA Agent</strong><br>
+                Video Hub Movies<br>
+                123 Copyright Compliance Lane<br>
+                Suite 789<br>
+                Las Vegas, NV 89109<br>
+                <strong>Email:</strong> dmca@videohubmovies.com<br>
+                <strong>Phone:</strong> (555) 123-4567
+              </address>
+              
+              <h4 class="mt-4">5. Important Notes</h4>
+              <ul>
+                <li>We only respond to DMCA notices that comply with the above requirements</li>
+                <li>Knowingly misrepresenting a claim may result in liability for damages</li>
+                <li>We may forward your notice to the alleged infringer</li>
+                <li>We reserve the right to publish redacted notices for transparency</li>
+              </ul>
+              
+              <h4 class="mt-4">6. Adult Content Considerations</h4>
+              <p>As an adult content provider, we:</p>
+              <ul>
+                <li>Require additional verification for DMCA claims involving adult performers</li>
+                <li>May request proof of copyright ownership for adult content</li>
+                <li>Follow 18 U.S.C. § 2257 record-keeping requirements</li>
+              </ul>
+              
+              <h4 class="mt-4">7. Processing Time</h4>
+              <p>We typically respond to valid DMCA notices within 3-5 business days. Removal of allegedly infringing content may occur before contacting the uploader.</p>
+              
+              <div class="alert alert-warning mt-4">
+                <strong>Note:</strong> This policy is for copyright claims only. For other legal inquiries, please contact our legal department.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer></footer>
+  
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+  <script>
+    // Age verification functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if age verification has expired (7 days)
+      const verificationTime = localStorage.getItem('ageVerifiedTimestamp');
+      if (verificationTime && (Date.now() - verificationTime > 604800000)) {
+        localStorage.removeItem('ageVerified');
+        localStorage.removeItem('ageVerifiedTimestamp');
+      }
+
+      // Check if age has already been verified
+      if (!localStorage.getItem('ageVerified')) {
+        document.body.classList.add('age-verification-active');
+        const ageVerification = document.getElementById('ageVerification');
+        
+        // Confirm age button
+        document.getElementById('confirmAge').addEventListener('click', function() {
+          localStorage.setItem('ageVerified', 'true');
+          localStorage.setItem('ageVerifiedTimestamp', Date.now());
+          document.body.classList.remove('age-verification-active');
+          ageVerification.style.display = 'none';
+        });
+        
+        // Deny age button
+        document.getElementById('denyAge').addEventListener('click', function() {
+          window.location.href = 'https://www.google.com';
+        });
+      } else {
+        document.getElementById('ageVerification').style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
